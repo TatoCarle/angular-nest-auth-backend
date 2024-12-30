@@ -1,0 +1,18 @@
+version: "4"  # Usar una versión más reciente
+
+services:
+  db:
+    container_name: mean-db
+    image: mongo:latest # Usar latest para probar o una versión específica reciente
+    restart: always
+    ports:
+      - "27017:27017" # Las comillas son recomendables
+    volumes:
+      - mongo_data:/data/db # Usar un volumen con nombre es mejor práctica
+    # Configuración adicional (opcional)
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: tu_usuario
+    #   MONGO_INITDB_ROOT_PASSWORD: tu_contraseña
+
+volumes:
+  mongo_data: # Definición del volumen con nombre
